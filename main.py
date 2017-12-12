@@ -8,4 +8,4 @@ import api
 #print api.get_team_basic_stats_at_event('9371', '1718-NYC-MCSM')
 print api.get_team_detailed_stats_at_event('9371', '1718-NYC-MCSM')
 
-print api.get_match_details('1718-NYC-MCSM-E001-1')
+#print api.get_match_details('1718-NYC-MCSM-E001-1')

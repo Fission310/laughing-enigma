@@ -137,6 +137,15 @@ def get_team_detailed_stats_at_event(team_num, event_id):
     avg_auto_jewel = 0.0
     avg_auto_park = 0.0
     avg_tele_glyphs = 0.0
+    avg_tele_rows = 0.0
+    avg_tele_cols = 0.0
+    avg_tele_cyphers = 0.0
+    avg_end_bal = 0.0
+    avg_end_relic_one = 0.0
+    avg_end_relic_two = 0.0
+    avg_end_relic_three = 0.0
+    avg_end_relic_up = 0.0
+
     count = 0
     for match in matches:
         if match[3]:
@@ -144,11 +153,27 @@ def get_team_detailed_stats_at_event(team_num, event_id):
             avg_auto_jewel += match[2]['red_auto_jewel']
             avg_auto_park += match[2]['red_auto_park']
             avg_tele_glyphs += match[2]['red_tele_glyphs']
+            avg_tele_rows += match[2]['red_tele_rows']
+            avg_tele_cols += match[2]['red_tele_columns']
+            avg_tele_cyphers += match[2]['red_tele_cypher']
+            avg_end_bal += match[2]['red_end_robot_bal']
+            avg_end_relic_one += match[2]['red_end_relic_one']
+            avg_end_relic_two += match[2]['red_end_relic_two']
+            avg_end_relic_three += match[2]['red_end_relic_three']
+            avg_end_relic_up += match[2]['red_end_relic_up']
         else:
             avg_auto_glyphs += match[2]['blue_auto_glyphs']
             avg_auto_jewel += match[2]['blue_auto_jewel']
             avg_auto_park += match[2]['blue_auto_park']
             avg_tele_glyphs += match[2]['blue_tele_glyphs']
+            avg_tele_rows += match[2]['blue_tele_rows']
+            avg_tele_cols += match[2]['blue_tele_columns']
+            avg_tele_cyphers += match[2]['blue_tele_cypher']
+            avg_end_bal += match[2]['blue_end_robot_bal']
+            avg_end_relic_one += match[2]['blue_end_relic_one']
+            avg_end_relic_two += match[2]['blue_end_relic_two']
+            avg_end_relic_three += match[2]['blue_end_relic_three']
+            avg_end_relic_up += match[2]['blue_end_relic_up']
         count += 1
 
     stats['team_num'] = team_num
@@ -157,5 +182,13 @@ def get_team_detailed_stats_at_event(team_num, event_id):
     stats['avg_auto_jewel'] = round(avg_auto_jewel / count, 1)
     stats['avg_auto_park'] = round(avg_auto_park / count, 1)
     stats['avg_tele_glyphs'] = round(avg_tele_glyphs / count, 1)
+    stats['avg_tele_rows'] = round(avg_tele_rows / count, 1)
+    stats['avg_tele_cols'] = round(avg_tele_cols / count, 1)
+    stats['avg_tele_cyphers'] = round(avg_tele_cyphers / count, 1)
+    stats['avg_end_bal'] = round(avg_end_bal / count, 1)
+    stats['avg_end_relic_one'] = round(avg_end_relic_one / count, 1)
+    stats['avg_end_relic_two'] = round(avg_end_relic_two / count, 1)
+    stats['avg_end_relic_three'] = round(avg_end_relic_three / count, 1)
+    stats['avg_end_relic_up'] = round(avg_end_relic_up / count, 1)
 
     return stats
